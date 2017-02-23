@@ -1,0 +1,42 @@
+<ion-view view-title="To do List" hide-nav-bar="true">
+<div class="bar bar-header">
+  <button class="button" ng-click="clear()">Clear</button>
+  <h1 class="title">My Notes</h1>
+  <button class="button" ng-click="openModal()"><i class="ion-edit" ></i></button>
+</div>
+  <ion-content >
+    <div style="padding-top:72px">
+  
+        <div class="card" ng-repeat="i in items track by $index ">
+        <div class="item item-text-wrap">
+         {{i}}
+        </div>
+      </div>
+
+    </div>
+  </ion-content>
+
+  <script id="my-modal.html" type="text/ng-template">
+  <ion-modal-view>
+    <ion-header-bar>
+      <h1 class="title">Add Notes</h1>
+      <button class="button" ng-click="closeModal()">cancel</button>
+    </ion-header-bar>
+    <ion-content>
+        <div class="list">
+
+          <label class="item item-input item-floating-label">
+            <span class="input-label">Note</span>
+            <input type="text" placeholder="Add note ..." ng-model="taskItem.item">
+          </label>
+
+          <button class="button button-full button-positive" style="margin-top: 75px" ng-click="saveItem(taskItem.item)"> SAVE </button>
+        </div>
+    </ion-content>
+  </ion-modal-view>
+</script>
+
+</ion-view>
+
+
+
